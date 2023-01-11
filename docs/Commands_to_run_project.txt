@@ -1,0 +1,8 @@
+# php artisan migrate
+# php artisan db:seed --class=PermissionTableSeeder
+# php artisan db:seed --class=CreateAdminUserSeeder
+
+Then a Super Admin Will be created . 
+ID : superadmin@gmail.com
+phone : 01700000000
+pass : 1234
