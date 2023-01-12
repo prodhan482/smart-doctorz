@@ -61,10 +61,19 @@
                 @endcan
 
                 <li class="nav-item">
-                    <a href="{{route('service.index')}}" class="nav-link">
+                    <a href="{{route('services.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-user-secret"></i>
                         <p>
                             Manage Service
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{route('services.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-user-secret"></i>
+                        <p>
+                            Manage Chambers
                         </p>
                     </a>
                 </li>

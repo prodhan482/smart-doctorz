@@ -71,7 +71,7 @@ Route::POST('/update-user-other-info',[EditProfileController::class, 'update_use
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('manage_roles', ManageRolesController::class);
     Route::resource('manage_users', ManageUsersController::class);
-    Route::resource('service', ServiceController::class);
+    Route::resource('services', ServiceController::class);
 });
 
 // Route::get('/manage-ex-students-list', [ExStudentController::class,'index'])->middleware('auth')->name('manage_ex_students');

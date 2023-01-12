@@ -14,8 +14,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::get()->toTree();
-        return view('service.index',compact('services'));
+        $service= Service::first();
+        return view('service.show',compact('service'));
     }
 
     /**
@@ -36,7 +36,7 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -47,7 +47,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        //
+        return view('service.show', compact('service'));
     }
 
     /**
@@ -81,6 +81,7 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        //
+        $service->delete();
+        return redirect()->back()->with('success','Service deleted successfully');
     }
 }
