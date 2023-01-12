@@ -60,47 +60,14 @@
                 </li>
                 @endcan
 
-
-{{--                <li class="nav-item">--}}
-{{--                    <a href="{{route('goto_add_station_page')}}" class="nav-link">--}}
-{{--                        <i class="nav-icon fas fa-plus-square"></i>--}}
-{{--                        <p>--}}
-{{--                            New Station--}}
-{{--                            <!-- <span class="right badge badge-danger">New</span> -->--}}
-{{--                        </p>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item">--}}
-{{--                    <a href="{{route('station_list')}}" class="nav-link">--}}
-{{--                        <i class="nav-icon fas fa-gas-pump"></i>--}}
-{{--                        <p>--}}
-{{--                            Station List--}}
-{{--                            <!-- <span class="right badge badge-danger">New</span> -->--}}
-{{--                        </p>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-
-
-
-
-{{--                <li class="nav-item">--}}
-{{--                    <a href="#" class="nav-link">--}}
-{{--                        <i class="nav-icon fas fa-camera"></i>--}}
-{{--                        <p>--}}
-{{--                            Multimedia--}}
-{{--                            <i class="fas fa-angle-left right"></i>--}}
-{{--                        </p>--}}
-{{--                    </a>--}}
-{{--                    <ul class="nav nav-treeview">--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a href="{{route('admin_video_gallery')}}" class="nav-link">--}}
-{{--                                <i class="far fa-circle nav-icon"></i>--}}
-{{--                                <p>Video Gallery</p>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                        --}}
-{{--                    </ul>--}}
-{{--                </li>--}}
+                <li class="nav-item">
+                    <a href="{{route('service.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-user-secret"></i>
+                        <p>
+                            Manage Service
+                        </p>
+                    </a>
+                </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
