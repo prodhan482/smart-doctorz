@@ -6,11 +6,12 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>Dent-care</title>
+    <link rel="icon" type="image/png" href="path-to-your-favicon"/>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/dent-logo.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"
         type='text/css'>

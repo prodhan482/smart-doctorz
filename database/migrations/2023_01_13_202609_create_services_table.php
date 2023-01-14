@@ -28,7 +28,6 @@ class CreateServicesTable extends Migration
      */
     public function down()
     {
-        $table->dropNestedSet();
         Schema::dropIfExists('services');
     }
 }
