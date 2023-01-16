@@ -22,7 +22,14 @@ class PermissionTableSeeder extends Seeder
             'user-list',
             'user-create',
             'user-edit',
-            'user-delete'
+            'user-delete',
+            'admin-can',
+            'patient-profile-show',
+            'tenant-can',
+            'patient-can',
+            'assistant-can',
+            'doctor-can',
+
         ];
 
         foreach ($permissions as $permission) {

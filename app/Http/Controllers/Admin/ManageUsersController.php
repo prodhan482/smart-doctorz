@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Tenant;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -44,10 +45,10 @@ class ManageUsersController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'email|unique:users,email',
+            // 'email' => 'email|unique:users,email',
             'phone' => 'required|numeric|unique:users,phone',
             'password' => 'required|same:confirm-password',
-            'roles' => 'required'
+            // 'roles' => 'required'
         ]);
 
         $input = $request->all();
@@ -81,8 +82,16 @@ class ManageUsersController extends Controller
         $user = User::find($id);
         $roles = Role::pluck('name','name')->all();
         $userRole = $user->roles->pluck('name','name')->all();
+        
+        $tenants = Tenant::all();
+        $tenant_id = $user->tenant_id;
 
-        return view('admin.manage_users.manage_users_edit',compact('user','roles','userRole'));
+
+        // dd($tenants);   
+
+
+
+        return view('admin.manage_users.manage_users_edit',compact('user','roles','userRole','tenants','tenant_id'));
     }
 
     /**
@@ -94,18 +103,26 @@ class ManageUsersController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request->all());
+        
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'email|unique:users,email,'.$id,
+            // 'email' => 'email|unique:users,email,'.$id,
             'phone' => 'required|numeric|unique:users,phone,'.$id,
             'password' => 'same:confirm-password',
-            'roles' => 'required'
+            // 'roles' => 'required',
+            // 'tenant_id' => 'required'
         ]);
 
         $input = $request->all();
+
+        // dd($input);
         if(empty($input['password'])){
             $input = Arr::except($input,array('password'));
         }
+
+        // $input = $request->tenant;
+
 
         $user = User::find($id);
         $user->update($input);

@@ -49,58 +49,76 @@
                     </a>
                 </li>
                 @endcan
+                @can('admin-can')
+                    <li class="nav-item">
+                        <a href="{{ route('manage_tenants.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-building"></i>
+                            <p>
+                                Manage Tenants
+                            </p>
+                        </a>
+                    </li>
+                @endcan
                 @can('role-list')
                 <li class="nav-item">
                     <a href="{{route('manage_roles.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-user-secret"></i>
+                        <i class="nav-icon fas fa-users"></i>
                         <p>
                             Manage Roles
                         </p>
                     </a>
                 </li>
                 @endcan
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas	fa-clinic-medical"></i>
+                        <p>
+                            Manage Chambers
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('manage_doctors.index')}}" class="nav-link">
+                        <i class="nav-icon fa fa-user-md"></i>
+                        <p>
+                            Manage Doctors
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas	fa-user-nurse"></i>
+                        <p>
+                            Manage Assistants
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas	fa-hospital-user"></i>
+                        <p>
+                            Manage Patients
+                        </p>
+                    </a>
+                </li>
 
+                <li class="nav-item">
+                    <a href="{{route('services.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-user-secret"></i>
+                        <p>
+                            Manage Service
+                        </p>
+                    </a>
+                </li>
 
-{{--                <li class="nav-item">--}}
-{{--                    <a href="{{route('goto_add_station_page')}}" class="nav-link">--}}
-{{--                        <i class="nav-icon fas fa-plus-square"></i>--}}
-{{--                        <p>--}}
-{{--                            New Station--}}
-{{--                            <!-- <span class="right badge badge-danger">New</span> -->--}}
-{{--                        </p>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item">--}}
-{{--                    <a href="{{route('station_list')}}" class="nav-link">--}}
-{{--                        <i class="nav-icon fas fa-gas-pump"></i>--}}
-{{--                        <p>--}}
-{{--                            Station List--}}
-{{--                            <!-- <span class="right badge badge-danger">New</span> -->--}}
-{{--                        </p>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-
-
-
-
-{{--                <li class="nav-item">--}}
-{{--                    <a href="#" class="nav-link">--}}
-{{--                        <i class="nav-icon fas fa-camera"></i>--}}
-{{--                        <p>--}}
-{{--                            Multimedia--}}
-{{--                            <i class="fas fa-angle-left right"></i>--}}
-{{--                        </p>--}}
-{{--                    </a>--}}
-{{--                    <ul class="nav nav-treeview">--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a href="{{route('admin_video_gallery')}}" class="nav-link">--}}
-{{--                                <i class="far fa-circle nav-icon"></i>--}}
-{{--                                <p>Video Gallery</p>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                        --}}
-{{--                    </ul>--}}
-{{--                </li>--}}
+                <li class="nav-item">
+                    <a href="{{route('services.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-user-secret"></i>
+                        <p>
+                            Manage Chambers
+                        </p>
+                    </a>
+                </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();

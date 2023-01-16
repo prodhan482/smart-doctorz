@@ -80,6 +80,25 @@
                                 {!! Form::select('roles[]', $roles,$userRole, array('class' => 'form-control','multiple')) !!}
                             </div>
                         </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Tenant:</strong>
+                                <select class="form-control" id="tenant" name="tenant_id">
+                                    <option value="">SELECT</option>
+                                    @forelse($tenants as $tenant)
+                                        <option value="{{ $tenant->id }}">{{ $tenant->name }}</option>
+                                    @empty
+                                    @endforelse
+                                </select>
+
+                                {{-- @if ($tenant_id)
+                                    {!! Form::select('tenant_id', $tenants, $tenant_id, ['class' => 'form-control']) !!}
+                                @else
+                                    {!! Form::select('tenant_id', $tenants, null, ['class' => 'form-control']) !!}
+                                @endif --}}
+
+                            </div>
+                        </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>

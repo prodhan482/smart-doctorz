@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\ManagePermissionsController;
 use App\Http\Controllers\Admin\ManageRolesController;
+use App\Http\Controllers\Admin\ManageTenantsController;
 use App\Http\Controllers\Admin\ManageUsersController;
 use App\Http\Controllers\CommonControllers\DashboardController;
 use App\Http\Controllers\CommonControllers\EditProfileController;
@@ -70,6 +72,11 @@ Route::POST('/update-user-other-info',[EditProfileController::class, 'update_use
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('manage_roles', ManageRolesController::class);
     Route::resource('manage_users', ManageUsersController::class);
+    Route::resource('services', ServiceController::class);
+    Route::resource('manage_permissions', ManagePermissionsController::class);
+    Route::resource('manage_tenants', ManageTenantsController::class);
+    Route::resource('service', ServiceController::class);
+    Route::resource('manage_doctors', DoctorController::class);
 });
 
 
