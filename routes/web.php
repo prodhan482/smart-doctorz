@@ -4,6 +4,8 @@ use App\Http\Controllers\Admin\ManageRolesController;
 use App\Http\Controllers\Admin\ManageUsersController;
 use App\Http\Controllers\CommonControllers\DashboardController;
 use App\Http\Controllers\CommonControllers\EditProfileController;
+use App\Http\Controllers\doctor\DoctorController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -70,27 +72,18 @@ Route::POST('/update-user-other-info',[EditProfileController::class, 'update_use
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('manage_roles', ManageRolesController::class);
     Route::resource('manage_users', ManageUsersController::class);
+<<<<<<< Updated upstream
+    Route::resource('services', ServiceController::class);
+=======
+    Route::resource('service', ServiceController::class);
+    Route::resource('manage_doctors', DoctorController::class);
+>>>>>>> Stashed changes
 });
 
-
-/*
------------------------------------------------------------
- ==== Manage Alumni starts Here  ===
------------------------------------------------------------
-*/
-Route::GET('/manage-alumni/create/{user_id}', [AlumniController::class, 'create'])->name('manage_alumni.create_non_resource')->middleware('auth');
-Route::resource('manage_alumni', AlumniController::class)->middleware('auth');
+Route::POST('/manage-doctor-store', [DoctorController::class, 'store'])->name('manage_doctor_store')->middleware('auth');
 
 
-
-
-/*
------------------------------------------------------------
- ==== Manage ExStudents starts Here  ===
------------------------------------------------------------
-*/
-
-Route::get('/manage-ex-students-list', [ExStudentController::class,'index'])->middleware('auth')->name('manage_ex_students');
-Route::POST('/manage-ex-students/update-alumni-status', [ExStudentController::class,'update_alumni_status'])->middleware('auth')->name('manage_ex_students.update_alumni_status');
+// Route::get('/manage-ex-students-list', [ExStudentController::class,'index'])->middleware('auth')->name('manage_ex_students');
+// Route::POST('/manage-ex-students/update-alumni-status', [ExStudentController::class,'update_alumni_status'])->middleware('auth')->name('manage_ex_students.update_alumni_status');
 
 
