@@ -45,6 +45,7 @@
                     <form method="post" action="{{ route('manage_doctor_store') }}">
                         @csrf
                         <input type="hidden" class="form-control" id="role" name="role" value="DOCTOR">
+                        <input type="hidden" class="form-control" id="role" name="role" value="DOCTOR" required>
 
                         <div class="card-body">
                             <div class="form-group">
@@ -72,6 +73,7 @@
                             <div class="form-group">
                                 <label for="name">Chamber Name<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="tenant_id" name="tenant_id"
+                                <input type="text" class="form-control" id="chamber_name" name="chamber_name"
                                     placeholder="Enter Chamber Name" required>
                             </div>
 
