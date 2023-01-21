@@ -17,7 +17,6 @@ class CreatePatientsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
             $table->foreignId('tenant_id')->nullable()->constrained();
-            $table->foreignId('chamber_id')->nullable()->constrained();
             $table->foreignId('doctor_id')->nullable()->constrained();
             $table->foreignId('assistant_id')->nullable()->constrained();
             $table->date('dob')->nullable();

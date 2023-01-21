@@ -86,7 +86,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('manage_assistants.index')}}" class="nav-link">
                         <i class="nav-icon fas	fa-user-nurse"></i>
                         <p>
                             Manage Assistants
@@ -94,7 +94,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('manage_patients.index')}}" class="nav-link">
                         <i class="nav-icon fas	fa-hospital-user"></i>
                         <p>
                             Manage Patients
@@ -107,15 +107,6 @@
                         <i class="nav-icon fas fa-user-secret"></i>
                         <p>
                             Manage Service
-                        </p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{route('services.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-user-secret"></i>
-                        <p>
-                            Manage Chambers
                         </p>
                     </a>
                 </li>

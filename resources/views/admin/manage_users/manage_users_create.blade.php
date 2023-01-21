@@ -1,6 +1,6 @@
 @extends('layouts.dashboard_layout')
 @section('custom_style')
-    <link href="{{asset('/plugins/tables/css/datatable/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+    {{-- <link href="{{asset('/plugins/tables/css/datatable/dataTables.bootstrap4.min.css')}}" rel="stylesheet"> --}}
 @endsection
 
 @section('page_errors')
@@ -92,7 +92,7 @@
 @endsection
 
 @section('extra_js')
-    <script src="{{asset('/plugins/tables/js/jquery.dataTables.min.js')}}"></script>
+    {{-- <script src="{{asset('/plugins/tables/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('/plugins/tables/js/datatable/dataTables.bootstrap4.min.js')}}"></script>
-    <script src="{{asset('/plugins/tables/js/datatable-init/datatable-basic.min.js')}}"></script>
+    <script src="{{asset('/plugins/tables/js/datatable-init/datatable-basic.min.js')}}"></script> --}}
 @endsection

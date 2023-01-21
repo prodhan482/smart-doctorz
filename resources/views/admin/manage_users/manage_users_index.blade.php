@@ -15,7 +15,7 @@
                             <!-- Page Heading -->
                             <div class="d-sm-flex align-items-center justify-content-between mb-4">
                                 <h1 class="h2 mb-0 text-gray-800 text-info font-weight-bold">User Managements</h1>
-                                <a href="{{ route('manage_users.create') }}" class="d-none d-sm-inline-block btn-sm btn-primary shadow-sm"><i class="fa fa-list"></i>
+                                <a href="{{ route('manage_users.create') }}" class="d-sm-inline-block btn-sm btn-primary shadow-sm"><i class="fa fa-list"></i>
                                     Create New User
                                 </a>
                             </div>
@@ -32,20 +32,23 @@
                     <div class="table-responsive">
                         <table class="table table-striped zero-configuration">
                             <thead>
-                            <tr class="text-white font-weight-bold" style="background: linear-gradient(to right, #ec2F4B, #009FFF);">
+                            <tr class="text-white text-center font-weight-bold" style="background: linear-gradient(to right, #ec2F4B, #009FFF);">
                                 <th>#</th>
                                 <th>Name</th>
+                                <th>Phone</th>
                                 <th>Email</th>
                                 <th>Roles</th>
+                                <th class="text-center">Tenant</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php  $count = 0; ?>
                             @foreach ($data as $key => $user)
-                                <tr>
+                                <tr class="text-center">
                                     <td>{{ $loop -> index + 1}}</td>
                                     <td>{{ $user->name }}</td>
+                                    <td>{{ $user->phone }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>
                                         @if(!empty($user->getRoleNames()))
@@ -54,6 +57,7 @@
                                             @endforeach
                                         @endif
                                     </td>
+                                    <td class="text-center">{{ $user->tenant_id }}</td>
                                     <td class="text-center align-middle">
                                         <a class="btn btn-sm btn-primary" href="{{ route('manage_users.show',$user->id) }}" data-toggle="tooltip" data-placement="top" title="View"><i class="fa fa-eye"></i></a>
                                         <a class="btn btn-sm btn-warning" href="{{ route('manage_users.edit',$user->id) }}" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>

@@ -125,6 +125,7 @@ class ManageUsersController extends Controller
 
 
         $user = User::find($id);
+        $user->tenant_id = $request->tenant_id;
         $user->update($input);
         DB::table('model_has_roles')->where('model_id',$id)->delete();
 

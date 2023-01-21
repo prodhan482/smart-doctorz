@@ -4,9 +4,11 @@ use App\Http\Controllers\Admin\ManagePermissionsController;
 use App\Http\Controllers\Admin\ManageRolesController;
 use App\Http\Controllers\Admin\ManageTenantsController;
 use App\Http\Controllers\Admin\ManageUsersController;
+use App\Http\Controllers\assistant\AssistantController;
 use App\Http\Controllers\CommonControllers\DashboardController;
 use App\Http\Controllers\CommonControllers\EditProfileController;
 use App\Http\Controllers\doctor\DoctorController;
+use App\Http\Controllers\patient\PatientController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -75,15 +77,23 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('services', ServiceController::class);
     Route::resource('manage_permissions', ManagePermissionsController::class);
     Route::resource('manage_tenants', ManageTenantsController::class);
-    Route::resource('service', ServiceController::class);
     Route::resource('manage_doctors', DoctorController::class);
-    Route::resource('services', ServiceController::class);
-    Route::resource('service', ServiceController::class);
-    Route::resource('manage_doctors', DoctorController::class);
+    Route::resource('manage_assistants', AssistantController::class);
+    Route::resource('manage_patients', PatientController::class);
 
 });
 
+
+//DOCTOR
 Route::POST('/manage-doctor-store', [DoctorController::class, 'store'])->name('manage_doctor_store')->middleware('auth');
+
+
+//ASSISTANT
+
+Route::POST('/manage-assistant-store', [AssistantController::class, 'store'])->name('manage_assistant_store')->middleware('auth');
+
+//PATIENT
+Route::POST('/manage-patient-store', [PatientController::class, 'store'])->name('manage_patient_store')->middleware('auth');
 
 
 // Route::get('/manage-ex-students-list', [ExStudentController::class,'index'])->middleware('auth')->name('manage_ex_students');

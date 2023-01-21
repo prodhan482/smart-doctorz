@@ -83,6 +83,25 @@ class User extends Authenticatable
 
     ];
 
+    public function doctor()
+    {
+        return $this->hasOne(Doctor::class);
+    }
+
+    public function assistant()
+    {
+        return $this->hasOne(Assistant::class);
+    }
+
+    public function patient()
+    {
+        return $this->hasOne(Patient::class);
+    }
+    public function tenant()
+    {
+        return $this->hasOne(Tenant::class);
+    }
+
     protected static function booted()
     {
         static::addGlobalScope(new TenantScope());

@@ -27,7 +27,7 @@
                         <div class="col-md-12 mt-lg-4 mt-4">
                             <!-- Page Heading -->
                             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                                <h1 class="h2 mb-0 text-gray-800 text-info font-weight-bold">Add New Doctor</h1>
+                                <h1 class="h2 mb-0 text-gray-800 text-info font-weight-bold">Add New Assistant</h1>
                                 <a href="{{ route('dashboard') }}" class="d-sm-inline-block btn-sm btn-danger shadow-sm"><i
                                         class="fa fa-backward mr-2"></i>
                                     Dashboard
@@ -42,78 +42,55 @@
             <!-- column -->
             <div class="col-md-12 mt-4">
                 <div class="card card-body">
-                    <form method="post" action="{{ route('manage_doctor_store') }}">
+                    <form method="post" action="{{ route('manage_assistant_store') }}">
                         @csrf
-                        <input type="hidden" class="form-control" id="role" name="role" value="DOCTOR">
-                        <input type="hidden" class="form-control" id="role" name="role" value="DOCTOR" required>
+                        <input type="hidden" class="form-control" id="role" name="role" value="ASSISTANT">
+
 
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="name">Doctor Name<span class="text-danger">*</span></label>
+                                <label for="name">Assistant Name<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="name" name="name"
-                                    placeholder="Enter Doctor Name" required>
+                                    placeholder="Enter Assistant Name" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="phone">Phone No.<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="phone" name="phone"
-                                    placeholder="+880 1XXX NNNNNN" required>
+                                    placeholder="+880 1XXX 0X00X0" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="phone">Email<span class="text-danger"></span></label>
                                 <input type="email" class="form-control" id="email" name="email"
-                                    placeholder="example@mail.com" >
+                                    placeholder="example@mail.com">
                             </div>
 
                             <div class="form-group">
                                 <label for="gender">Gender<span class="text-danger">*</span></label><br>
-                                    <input type="radio" name="gender" value="male"> Male
-                                    <input type="radio" name="gender" value="female"> Female
-                                    <input type="radio" name="gender" value="other"> Other
+                                <input type="radio" name="gender" value="male"> Male
+                                <input type="radio" name="gender" value="female"> Female
+                                <input type="radio" name="gender" value="other"> Other
                             </div>
 
                             <div class="form-group">
-                                <label for="name">Chamber Name<span class="text-danger">*</span></label>
-                                <select class="form-control" id="tenant_id" name="tenant_id" required>
-                                    <option selected value="" disabled>SELECT</option>
+                                <label for="name">Tenant/Hospital Name<span class="text-danger">*</span></label>
+                                <select class="form-control" id="tenant" name="tenant_id">
+                                    <option value="">SELECT</option>
                                     @forelse($tenants as $tenant)
                                         <option value="{{ $tenant->id }}">{{ $tenant->name }}</option>
-
                                     @empty
                                     @endforelse
                                 </select>
-                                {{-- <input type="text" class="form-control" id="tenant_id" name="tenant_id"
-                                <input type="text" class="form-control" id="chamber_name" name="chamber_name"
-                                    placeholder="Enter Chamber Name" required> --}}
                             </div>
 
 
-                            <div class="form-group">
-                                <label for="name">Category<span class="text-danger">*</span></label>
-                                <select class="form-control" name="category" id="category" required>
-                                    <option selected value="" disabled>SELECT</option>
-                                    <option value="Dentist">Dentist</option>
-                                    <option value="Allergists">Allergists</option>
-                                    <option value="Dermatologists">Dermatologists</option>
-                                    <option value="Ophthalmologists">Ophthalmologists</option>
-                                    <option value="Cardiologists">Cardiologists</option>
-                                    <option value="Gastroenterologists">Gastroenterologists</option>
-                                    <option value="Urologists">Urologists</option>
-                                </select>
-                            </div>
 
-                            <div class="form-group">
-                                <label for="name">Education<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="education" name="education"
-                                    placeholder="Enter Education" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="name">Experience<span class="text-danger">*</span></label>
+                            {{-- <div class="form-group">
+                                <label for="name">Year Of Experience<span class="text-danger">*</span></label>
                                 <input type="textarea" class="form-control" id="experience" name="experience"
                                     placeholder="Enter your Experience" required>
-                            </div>
+                            </div> --}}
 
                             <div class="form-group">
                                 <label for="password">Password <span class="text-danger font-weight-bold">*</span></label>
