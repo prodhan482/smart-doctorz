@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Dent-care</title>
+    <title>Smart Doctorz</title>
     <link rel="icon" type="image/png" href="path-to-your-favicon"/>
     <meta content="" name="description">
     <meta content="" name="keywords">
@@ -61,7 +61,7 @@
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo me-auto"><a href="index.html">Dent-Care</a></h1>
+            <h1 class="logo me-auto"><a href="index.html">Smart Doctorz</a></h1>
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
@@ -102,7 +102,7 @@
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center">
         <div class="container">
-            <h1>Welcome to Dent-Care</h1>
+            <h1>Welcome to Smart Doctorz</h1>
             <h2>We are here to take care.</h2>
             <a href="#about" class="btn-get-started scrollto">Get Started</a>
         </div>
@@ -117,7 +117,7 @@
                 <div class="row">
                     <div class="col-lg-4 d-flex align-items-stretch">
                         <div class="content">
-                            <h3>Why Choose Dent-Care?</h3>
+                            <h3>Why Choose Smart Doctorz?</h3>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
@@ -973,7 +973,7 @@
                 <div class="row">
 
                     <div class="col-lg-3 col-md-6 footer-contact">
-                        <h3>Dent-Care</h3>
+                        <h3>Smart Doctorz</h3>
                         <p>
                             Mirpur-10 <br>
                             Dhaka<br>
@@ -1021,13 +1021,13 @@
 
             <div class="me-md-auto text-center text-md-start">
                 <div class="copyright">
-                    &copy; Copyright @2023 <strong><span>Dent-Care</span></strong>. All Rights Reserved
+                    &copy; Copyright @2023 <strong><span>Smart Doctorz</span></strong>. All Rights Reserved
                 </div>
                 <div class="credits">
                     <!-- All the links in the footer should remain intact. -->
                     <!-- You can delete the links only if you purchased the pro version. -->
                     <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/Dent-Care-free-medical-bootstrap-theme/ -->
+                    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/Smart Doctorz-free-medical-bootstrap-theme/ -->
                     Designed by <a href="http://hilinkz.com/">HiLinkz Ltd.</a>
                 </div>
             </div>
