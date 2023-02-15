@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ManagePermissionsController;
 use App\Http\Controllers\Admin\ManageRolesController;
 use App\Http\Controllers\Admin\ManageTenantsController;
 use App\Http\Controllers\Admin\ManageUsersController;
+use App\Http\Controllers\Api\v1\RegisterController;
 use App\Http\Controllers\assistant\AssistantController;
 use App\Http\Controllers\CommonControllers\DashboardController;
 use App\Http\Controllers\CommonControllers\EditProfileController;
@@ -41,6 +42,9 @@ Route::get('/clear-all/{id}', function($id) {
 
 
 Auth::routes();
+Route::POST('/verify-otp', [RegisterController::class,'sendOtp'])->name('sendotp');
+Route::GET('/verify-otp', [RegisterController::class,'otpVerify']);
+Route::POST('/register', [RegisterController::class,'create'])->name('registeruser');
 
 /*
 -----------------------------------------------------------

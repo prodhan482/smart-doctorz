@@ -15,13 +15,15 @@ use Illuminate\Notifications\Notifiable;
 
 use Spatie\Permission\Traits\HasRoles;
 
+use Laravel\Sanctum\HasApiTokens;
+
 
 
 class User extends Authenticatable
 
 {
 
-    use HasFactory, Notifiable, HasRoles;
+    use HasFactory, Notifiable, HasRoles, HasApiTokens;
 
 
 
@@ -106,11 +108,10 @@ class User extends Authenticatable
     {
         static::addGlobalScope(new TenantScope());
 
-        static::creating(function ($model){
+        static::creating(function ($model) {
             if (session()->has('tenant_id')) {
                 $model->tenant_id = session()->get('tenant_id');
             }
         });
     }
-
 }
